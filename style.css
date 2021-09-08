@@ -1,0 +1,20 @@
+.block{
+    border: 1px black solid;
+    height: 100px;
+    width: 100px;
+    background-color: #FFFFFF;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.wrapper h2{
+    width: 100px;
+}
+
+.main{
+    text-align: center;
+}

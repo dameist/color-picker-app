@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>ColorPicker</title>
+</head>
+<body>
+    <div class ='main'>
+        <h1 id='title'>Color Picker App</h1>
+        <button onclick = 'randomColor()'>Click for random color!</button>
+        <div class="wrapper">
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+            <div class="singleBlock">
+                <h2 class = "color-text"></h2>
+                <div class="block"></div>
+                <input type="checkbox" onclick='lock()' class = "box" >
+            </div>
+        </div>
+        
+    </div>
+    <script type='text/javascript'>
+        function randomColor (){
+            const text = document.querySelectorAll(".color-text");
+            const block = document.querySelectorAll('.block');
+            const checkboxes = document.querySelectorAll('.box');
+            let choice = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+            
+            let output = '#';
+           
+            console.log(output);
+            for(let i = 0; i<block.length;i++){
+                for( let i = 0; i<6; i++){
+                    output += choice[Math.floor(Math.random()*15)]
+                }
+                if(!checkboxes[i].classList.contains('locked')){
+                text[i].innerText = output;
+                block[i].style.backgroundColor = output;
+                }
+                output = '#';
+            }
+           
+            return output;
+        }
+
+    function lock(){
+        const btns = document.querySelectorAll('.box');
+        btns.forEach((button) =>{
+            if(button.checked){
+                button.classList.add('locked');
+            }
+            else{
+                button.classList.remove('locked');
+            }
+        })
+       
+    }
+    </script>
+    
+</body>
+
+</html>
